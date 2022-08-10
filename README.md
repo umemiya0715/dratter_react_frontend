@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Dratter
 
-## Getting Started
+## 注意
+このレポジトリは作者の勉強用として上記のアプリをReact(Next.js)とTypeScriptで作ったバージョンです。
+基本的にはVueで作ったものと同じ機能になります。
 
-First, run the development server:
+## サービス概要
+Twitterのツイートを感情分析することで、<br>
+そのアカウントを使う人がどんな人なのかを事前に知ることができる、<br>
+SNSリテラシー向上サービスです。<br>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 使用技術(一部予定)
+バックエンド
+ - Ruby(3.1.2)
+ - Rails(7.0.3.1)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+フロントエンド
+ - HTML
+ - CSS
+ - TailwindCSS(2.2.17)
+ - TypeScript
+ - React.js
+ - Next.js
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+インフラ
+ - heroku
+ - Vercel
+ - MySQL
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 登場人物
+ツイートの感情分析をして自分と他人の心を知る人
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## ユーザーが抱える課題
+1.自分のツイートが自他にどのような影響や印象を与えているかを知りたい。<br>
+2.Twitterを運用していきたいが、いいねの数に振り回されたくない。<br>
+3.他のアカウントを使う人がどんな人なのかを先に知ることで、<br>
+  SNS上の人間関係や運用上での悩みを減らしたい。<br>
 
-## Learn More
+## 解決方法
+Twitter APIや感情分析を用いて、各アカウントで呟く人の感情に<br>
+どのような傾向があるのかを計測してドラゴンに例える。<br>
+(ポジティブかネガティブか、その感情が自分に向いているか他人に向いているかで判断)<br>
+診断したアカウントの周囲に対する傾向を知ることで、対象のアカウントの運用方法や付合い方がわかる。<br>
 
-To learn more about Next.js, take a look at the following resources:
+## マーケット
+Twitter上での人間関係や運用方法を考え直したい人<br>
+ドラゴンや龍が好き人<br>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 画面遷移図
+https://xd.adobe.com/view/f369b4f4-91a1-4025-a0de-d6237bff6c42-a63a/
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## ER図
+https://drive.google.com/file/d/12vdTI5Zrdz6FWTw0iU4mwWwk-rRkb_SA/view?usp=sharing
