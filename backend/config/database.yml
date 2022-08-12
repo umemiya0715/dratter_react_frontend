@@ -11,12 +11,11 @@ default: &default
   username: root
   socket: /tmp/mysql.sock
   host: db
-  timeout: 5000
 
 development:
   <<: *default
   database: dratter_react_development
-  password: <%= Rails.application.credentials.development[:password] %> 
+  password: <%= Rails.application.credentials.development[:password] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

@@ -6,7 +6,8 @@ RUN apt-get update -qq && \
                        vim
 
 RUN mkdir /app
-WORKDIR /app
+ENV APP_ROOT /app
+WORKDIR $APP_ROOT
 
 ADD ./Gemfile /app/Gemfile 
 ADD ./Gemfile.lock /app/Gemfile.lock
@@ -14,4 +15,4 @@ RUN bundle install
 
 COPY . .
 
-CMD ["rails", "server", "-b", "127.0.0.1"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
