@@ -1,22 +1,23 @@
 version: '3.8'
 
 volumes:
-  mysql_data:
+  mysql_volume:
 
 services:
   db:
     image: mysql:8.0.30
     environment:
       MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     ports:
-      - '3307:3306'
+      - '13306:3306'
     volumes:
       - ./backend/tmp/db:/var/lib/mysql
 
   backend:
     build:
       context: ./backend
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - ./backend:/app
       - /app/vendor
@@ -29,9 +30,10 @@ services:
     stdin_open: true
     tty: true
     environment:
-      - DB_HOST=db
-      - DB_USER=${DB_USER}
-      - DB_PASSWORD=${DB_PASSWORD}
+      DB_PORT: 3306
+      DB_HOST: db
+      DB_USERNAME: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
 
   frontend:
     build:
