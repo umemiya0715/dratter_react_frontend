@@ -7,7 +7,6 @@ services:
   db:
     image: mysql:8.0.30
     environment:
-      MYSQL_USER: ${DB_USER}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     ports:
       - '13306:3306'
