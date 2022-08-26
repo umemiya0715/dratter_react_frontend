@@ -1,13 +1,12 @@
 FROM node:16.16.0
 
-ENV APP_HOME /app
-RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME
+ENV APP /usr/src/app
+RUN mkdir $APP
+WORKDIR $APP
 
-RUN yarn global add create-next-app
-COPY package.json .
-RUN yarn install
+COPY package.json yarn.lock $APP/
+RUN yarn
 
-COPY . .
+COPY . $APP/
 
-RUN yarn build
+CMD ["yarn", "dev"]
